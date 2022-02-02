@@ -4,7 +4,7 @@
 SELECT
 category.name,
 RANK() OVER (ORDER BY COUNT(rental.rental_date) DESC),
-COUNT(*)
+COUNT(rental.rental_date)
 FROM rental
 INNER JOIN inventory
 ON inventory.inventory_id = rental.inventory_id
